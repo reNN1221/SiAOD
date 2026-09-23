@@ -60,6 +60,7 @@ POW_CALLS = 20_000    # вызовов binary_pow на один замер: ин
 
 
 def array_sum(a: list[int]) -> int:
+    """Сумма элементов массива. Сложность: Θ(n)."""
     total = 0
     for x in a:
         total += x
@@ -67,6 +68,7 @@ def array_sum(a: list[int]) -> int:
 
 
 def array_max(a: list[int]) -> int:
+    """Максимум массива (массив непуст). Сложность: Θ(n)."""
     max_val = a[0]
     for x in a:
         if x > max_val:
@@ -75,6 +77,7 @@ def array_max(a: list[int]) -> int:
 
 
 def count_equal_pairs(a: list[int]) -> int:
+    """Число пар (i, j), i < j, таких что a[i] == a[j]. Сложность: Θ(n²)."""
     count = 0
     n = len(a)
     for i in range(n):
@@ -85,6 +88,7 @@ def count_equal_pairs(a: list[int]) -> int:
 
 
 def binary_pow(x: int, n: int, mod: int | None = None) -> int:
+    """Бинарное возведение в степень, n >= 0. Сложность: Θ(log n) по показателю."""
     result = 1
     base = x
     while n > 0:

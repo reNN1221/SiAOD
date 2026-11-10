@@ -100,19 +100,19 @@ def quick_sort(a: list, rng: random.Random | None = None) -> list:
     a = list(a)
 
     def partition(lo: int, hi: int) -> int:
-        k = rng.randrange(lo, hi + 1)  # случайный опорный
-        a[k], a[hi] = a[hi], a[k]  # переносим его в конец
-        p = a[hi]  # опорный
-        i = lo  # начало зоны «≥ p»
+        k = rng.randrange(lo, hi + 1) 
+        a[k], a[hi] = a[hi], a[k] 
+        p = a[hi] 
+        i = lo 
         for j in range(lo, hi):
             if less(a[j], p):
                 a[i], a[j] = a[j], a[i]
                 i += 1
-        a[i], a[hi] = a[hi], a[i]  # p встаёт между зонами
-        return i  # место p
+        a[i], a[hi] = a[hi], a[i] 
+        return i 
 
     def sort(lo: int, hi: int) -> None:
-        if lo >= hi:  # 0 или 1 элемент
+        if lo >= hi: 
             return
         m = partition(lo, hi)
         sort(lo, m - 1)
